@@ -1,0 +1,101 @@
+<!-- wp:paragraph -->
+<p>Awk stands for Aho Weinberger and Kernighan. Awk is a scripting language to process and analyze files.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Some of the features of Awk are given below :</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Awk actually work on data files.</li><li>Awk can generate formatted output.</li><li>Awk support different regular expressions.</li><li>Awk allows different features of traditional programming language like conditions, operators, loop , functions and so on.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Syntax of Awk command</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">awk 'program' input_file</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>The simplest program is the sequence of actions. Each action has either pattern or no pattern. Each action is enclosed with braces. We explain with a typical file named input.txt that contains name , age and height like this :</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">Mehedi	01	WDE	25000Arafat	02	WDE	27000Baki	03	SDE	30000Mahbub	04	ADE	29000Nazmul	05	SDE	24000</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>If action has pattern , then matches that pattern with files line by line until end of file and print the matches lines. Example :</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted"> awk '$4&gt;=25000  {print $1, $2 }' <strong>in</strong>.txt</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>Output are given below</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">Mehedi 01Arafat 02Baki 03Mahbub 04</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>Otherwise, action is performed for all lines of input file.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">awk '{print $1, $2 }' <strong>in</strong>.txt</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>Output are given below :</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">Mehedi 01Arafat 02Baki 03Mahbub 04Nazmul 05</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>We can also write program that has only pattern and action is missing. For these programs the matched line is printed. But it is not a good practice to write only pattern without action.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">awk '/WDE/' <strong>in</strong>.txt</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p>Output :</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">Mehedi	01	WDE	25000Arafat	02	WDE	27000</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:paragraph -->
+<p><strong>Some points about printing :</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>At the time of printing the all field of input lines we just write&nbsp;<strong>print.</strong></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">    awk '{print }' <strong>in</strong>.txt</pre>
+<!-- /wp:preformatted -->
+
+<!-- wp:list -->
+<ul><li>Otherwise we write&nbsp;<strong>print&nbsp;</strong>and particular column number with dollar sign like $1. For more column we obviously use comma as a separator.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:group -->
+<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:code -->
+<pre class="wp-block-code"><code></code></pre>
+<!-- /wp:code --></div></div>
+<!-- /wp:group -->
+
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted"></pre>
+<!-- /wp:preformatted -->
